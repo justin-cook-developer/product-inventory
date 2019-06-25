@@ -4,7 +4,8 @@
   "description": "A solo fullstack app utilizing sequelize.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./back-end/index.js"
+    "start": "nodemon ./back-end/index.js",
+    "seed": "node seed.js"
   },
   "keywords": [],
   "author": "",
