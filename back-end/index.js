@@ -14,6 +14,14 @@ app.use(express.static(path.join(__dirname, '../front-end', 'dist')));
 
 app.use('/api', require('./api/index'));
 
+app.get('/*', (req, res, next) => {
+  try {
+    res.sendFile(path.join(__dirname, '../front-end', 'dist/index.html'));
+  } catch (e) {
+    next(e);
+  }
+});
+
 app.use((req, res, next) => {
   try {
     res.status(404).send('Page not found. This is an invalid route.');
