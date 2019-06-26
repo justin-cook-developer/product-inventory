@@ -41,7 +41,6 @@ class App extends React.Component {
 
   render() {
     const filteredData = this.filterProducts(this.state.products);
-    console.log(filteredData)
     return (
       <React.Fragment>
         <header>
