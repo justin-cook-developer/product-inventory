@@ -22,13 +22,14 @@ app.get('/*', (req, res, next) => {
   }
 });
 
-app.use((req, res, next) => {
-  try {
-    res.status(404).send('Page not found. This is an invalid route.');
-  } catch (e) {
-    next(e);
-  }
-});
+// not in use because of catch all, see above. Use # router next time.
+// app.use((req, res, next) => {
+//   try {
+//     res.status(404).send('Page not found. This is an invalid route.');
+//   } catch (e) {
+//     next(e);
+//   }
+// });
 
 app.use((e, req, res, next) => {
   console.error(e);

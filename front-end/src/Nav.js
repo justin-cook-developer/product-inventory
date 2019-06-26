@@ -25,32 +25,34 @@ const NavItem = ({ dest, text, num }) => (
   </li>
 );
 
-const Nav = ({ filteredData }) => (
-  <nav>
-    <ul>
-      {Object.entries(filteredData).map(([status, prods]) => {
-        if (status === 'all') {
-          return (
-            <NavItem
-              key={status}
-              dest="/"
-              text="All Products"
-              num={prods.length}
-            />
-          );
-        } else {
-          return (
-            <NavItem
-              key={status}
-              dest={`/${status}`}
-              text={status}
-              num={prods.length}
-            />
-          );
-        }
-      })}
-    </ul>
-  </nav>
-);
+const Nav = ({ filteredData }) => {
+  return (
+    <nav>
+      <ul>
+        {Object.entries(filteredData).map(([status, prods]) => {
+          if (status === 'all') {
+            return (
+              <NavItem
+                key={status}
+                dest="/"
+                text="All Products"
+                num={prods.length}
+              />
+            );
+          } else {
+            return (
+              <NavItem
+                key={status}
+                dest={`/${status}`}
+                text={status}
+                num={prods.length}
+              />
+            );
+          }
+        })}
+      </ul>
+    </nav>
+  );
+};
 
 export default Nav;
